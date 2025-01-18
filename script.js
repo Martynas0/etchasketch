@@ -4,7 +4,8 @@ createGrid(200);
 
 container.addEventListener("mouseover", (event) => {
     const element = event.target;
-    if (!element.classList.contains("row")) {
+    if (!element.classList.contains("row") &&
+        !element.classList.contains("main-container")) {
         element.classList.add("marked");
     }
 })
