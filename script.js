@@ -21,6 +21,9 @@ inputForm.addEventListener("click", (event) => {
         else {
             alert("You must enter a number from 1 to 200 !");
         }
+    }
+    if (event.target.id === "clear") {
+        clearGrid();
     }    
 })
 
@@ -34,6 +37,11 @@ function createGrid(size) {
 function removeGrid () {
     const listOfRows = document.querySelectorAll(".row");
     listOfRows.forEach( element => element.remove() );
+}
+
+function clearGrid () {
+    const listOfBlocks = document.querySelectorAll(".block");
+    listOfBlocks.forEach( element => element.classList.remove("marked"))
 }
 
 
