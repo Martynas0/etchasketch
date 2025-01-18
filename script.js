@@ -1,7 +1,13 @@
 const container = document.querySelector(".main-container");
 
+createGrid(200);
 
-createGrid(50);
+container.addEventListener("mouseover", (event) => {
+    const element = event.target;
+    if (!element.classList.contains("row")) {
+        element.classList.add("marked");
+    }
+})
 
 function createGrid(size) {
     for (let i = 0; i < size; i++) {
@@ -9,6 +15,10 @@ function createGrid(size) {
         fillRow(row, size);     
     }
 }
+
+
+
+
 
 function createRow() {
     const row = document.createElement("div");
